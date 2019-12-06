@@ -47,7 +47,7 @@ class Connect{
     }
 
     public function update($id, $user, $email){
-        $sql = $this->pdo->prepare('UPDATE usuarios SET user = ?, email = ?');
+        $sql = $this->pdo->prepare('UPDATE usuarios SET user = ?, email = ? WHERE id = ?');
 
         $sql->bindValue(1, $user);
         $sql->bindValue(2, $email);
